@@ -1,0 +1,47 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Add a new Todo</h1>
+  </header>
+</section>
+<div class="container">
+    <div class="row">
+<div class="col-md-8">
+    <section class="todo" >
+        <form [formGroup]="myform" (ngSubmit)="addnewtodo(myform)">
+            <fieldset>
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control new-todo" required>
+                <p class="has-danger text-center" *ngIf="!myform.controls.name.valid  && (isSubmit)">Enter name it is imported</p>
+              </div>
+            <div class="form-group">
+              <label>Status</label>
+              <select class="form-control" formControlName="status" required>
+                <option *ngFor="let stat of status" [value]="stat">{{stat}}</option> 
+              </select>
+              <p class="has-danger text-center" *ngIf="!myform.controls.status.valid  && (isSubmit)">Select status it is imported</p>
+            </div>
+            <div class="form-group">
+                <label>Label</label>
+                <select class="form-control" formControlName="labels" required>
+                  <option *ngFor="let label of labels" [value]="label">{{label}}</option>
+                </select>
+                <p class="has-danger text-center" *ngIf="!myform.controls.labels.valid  && (isSubmit)">Select labels it is imported</p>
+              </div>
+              <div class="form-group">
+                  <label>Status</label>
+                  <input type="datetime-local" formControlName="date" class="form-control new-todo" required datevalid>
+                  <p class="has-danger text-center"  *ngIf="!myform.controls.date.valid  && (isSubmit)">Select date it is imported</p>
+              </div>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light btni">Add New Todo</button>
+              </div>
+              </fieldset>
+          </form>   
+    </section>
+   </div>
+   <div class="col-md-offset-1 col-md-3">
+     <a routerLink="/dashboard" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light btni side">Dashboard</a>
+  </div>
+</div>
+</div>

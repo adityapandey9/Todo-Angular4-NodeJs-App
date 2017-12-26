@@ -1,0 +1,1 @@
+module.exports = { 'secret': 'adityakumarpandey', 'url': 'mongodb://localhost:27017/list' };

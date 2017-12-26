@@ -1,0 +1,31 @@
+<section class="todoapp">
+    <header class="header">
+      <h1>Todos</h1>
+      <input class="new-todo" placeholder="Search todo list" autofocus="" (ngModelChange)="search($event)" [(ngModel)]="searchitem">
+    </header>
+</section>
+<div class="container">
+    <div class="row">
+     <div class="col-md-8">
+      <section class="todo" >
+         <ul class="todo-list">
+           <li *ngFor="let todo of todos; let i = index">
+             <div  class="view">
+               <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo, i)" [checked]="checkit(todo.status)">
+               <label>{{todo.name}} <span>{{ todo.due_date | date: 'd EEE yyyy' }}</span></label>
+               <span class="status"><b>Status:</b> {{ todo.status[0] }}</span>
+               <span class="labels"><b>Lable:</b> {{ todo.lables }} </span>
+               <button class="destroy" (click)="removeTodo(todo, i)"><span>Archive</span> </button>
+             </div>
+           </li>
+         </ul>
+       </section>
+     </div>
+     <div class="col-md-offset-1 col-md-3">
+            <a routerLink="/addnew" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light btni">Add New</a>
+            <section class="todo">
+                
+            </section> 
+     </div>
+   </div>
+</div>

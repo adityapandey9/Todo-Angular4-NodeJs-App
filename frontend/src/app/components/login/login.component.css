@@ -1,0 +1,26 @@
+.btni{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 20px 8px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+    line-height: 20px;
+    font-family: "Fira Sans", sans-serif;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background-color: #00E3AE;
+    background: linear-gradient(320.44deg, #00E3AE 0%, rgb(39, 128, 212) 100%);
+    transition: all ease 0.2s;
+    border-radius: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.btni:hover {
+    background: linear-gradient(320.44deg, rgb(63, 182, 230) 0%, rgb(177, 165, 107) 100%);
+    transition: all ease 0.2s;
+}
